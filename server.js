@@ -19,9 +19,7 @@ app.set('view engine', 'hbs');
 
 app.use(express.static(__dirname + '/webapp'));
 
-app.use((req,res,next) => {
-    res.render('maintenance.hbs');
-});
+
 
 app.use((req,res,next) => {
     var now = new Date().toString();
@@ -46,6 +44,12 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
         pageTitle: 'About Us Page',
+    });
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects Page'
     });
 });
 
